@@ -1,6 +1,4 @@
 <script setup>
-  import HelloWorld from './components/HelloWorld.vue'
-  import TheWelcome from './components/TheWelcome.vue'
   import TailwindButton from './tailwind_components/TailwindButton.vue'
   import TailwindHello from './tailwind_components/TailwindHello.vue'
 </script>
