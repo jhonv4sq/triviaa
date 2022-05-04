@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  inject: ['secondaryBg']
+  inject: ['secondaryBg', 'greenBg']
 }
 </script>
 
@@ -14,7 +14,9 @@ export default {
   </header>
   <main>
     <h1 class="font-hammer text-light text-xl">Test your brain with our quiz!</h1>
-    <TailwindLink href="settings" :class="secondaryBg">Start Game</TailwindLink>
+
+    <TailwindLink link="settings" :class="secondaryBg">Start Game</TailwindLink>
+
     <!-- <tailwind-link href="/settings" :class="secondaryBg">Start Game</tailwind-link> -->
   </main>
 </template>
