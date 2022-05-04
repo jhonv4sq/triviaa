@@ -2,7 +2,7 @@ import { data } from 'autoprefixer';
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue'
-import Home from '@/views/home.vue';
+import Home from '@/views/Home.vue';
 import Settings from '@/views/Settings.vue';
 import './index.css'
 
