@@ -1,5 +1,7 @@
 <template>
-  <h1>hola</h1>
+  <p class="uppercase text-primary text-4xl font-hammer">
+      <slot />
+  </p>
 </template>
 
 <script>
