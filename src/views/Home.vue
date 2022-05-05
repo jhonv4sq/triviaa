@@ -1,4 +1,5 @@
 <script setup>
+  import Logo from '@/tailwind_components/Logo.vue';
   import TailwindLink from '@/tailwind_components/TailwindLink.vue';
 </script>
 
@@ -10,7 +11,7 @@ export default {
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo h-[230px] w-[230px]" src="../assets/logo.svg" />
+    <Logo class="h-[230px] w-[230px]"/>
   </header>
   <main>
     <h1 class="font-hammer text-light text-xl">Test your brain with our quiz!</h1>

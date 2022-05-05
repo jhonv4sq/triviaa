@@ -1,8 +1,9 @@
 <script setup>
     import axios from 'axios';
-    import TailwindTitle from '../tailwind_components/TailwindTitle.vue';
-    import TailwindButton from '../tailwind_components/TailwindButton.vue';
-    import TailwindSelect from '../tailwind_components/TailwindSelect.vue';
+    import TailwindTitle from '@/tailwind_components/TailwindTitle.vue';
+    import Logo from '@/tailwind_components/Logo.vue'
+    import TailwindButton from '@/tailwind_components/TailwindButton.vue';
+    import TailwindSelect from '@/tailwind_components/TailwindSelect.vue';
 </script>
 
 <script>
@@ -31,7 +32,15 @@ export default {
   methods: {
       handleSubmit() {
           console.log(this.formRawData.amount, this.formRawData.category, this.formRawData.difficulty);
-        //   this.$route.push('/'); // Redirecciona a Home
+          this.$router.push({
+              name: 'Game',
+              params: {
+                  'amount': this.formRawData.amount,
+                  'category': this.formRawData.category,
+                  'difficulty': this.formRawData.difficulty,
+                  'type': this.formRawData.type
+              }
+          })
       }
   }
 }
@@ -39,11 +48,11 @@ export default {
 
 <template>
     <header>
-        <img alt="Vue logo" class="logo h-[170px] w-[170px]" src="../assets/logo.svg" />
+        <Logo class="h-[170px] w-[170px]" />
         <tailwind-title>trivia settings</tailwind-title>
     </header>
     <main>
-        <form class="flex flex-col gap-6 w-full lg:w-1/2 mt-24 text-white text-bold font-hammer" @submit.prevent="handleSubmit">
+        <form class="flex flex-col gap-6 w-full lg:w-1/2 mt-2 lg:mt-24 text-white text-bold font-hammer" @submit.prevent="handleSubmit">
             <label for="amount" class="self-start text-2xl">Number of Question</label>
             <input v-model="formRawData.amount" class="uppercase text-center block w-full px-3 py-1.5 text-base font-fira text-dark bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded focus:text-gray-700 focus:bg-white focus:outline-none" id="amount" name="amount" type="number" min="1" max="50" placeholder="Number of Questions">
             <label for="category" class="self-start text-2xl">Category</label>

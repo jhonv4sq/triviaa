@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue'
 import Home from '@/views/Home.vue';
 import Settings from '@/views/Settings.vue';
+import Game from '@/views/Game.vue';
 import './index.css'
 
 
@@ -12,12 +13,20 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    props: true
   },
   {
     path: '/settings',
     name: 'Settings',
     component: Settings,
+    props: true
   },
+  {
+    path: '/game',
+    name: 'Game',
+    component: Game,
+    props: true
+  }
 ];
 
 const router = createRouter({
