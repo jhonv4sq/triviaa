@@ -27,8 +27,13 @@ export default {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
-
+    position: relative;
     font-weight: normal;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   main{
     display: flex;  

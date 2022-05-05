@@ -1,6 +1,6 @@
 <template>
 <div class="flex justify-center w-full">
-  <div class="mt-5 w-full xl:w-96">
+  <div class="mt-5 w-80 md:w-96">
     <select class="form-select uppercase text-center
       block
       w-full
