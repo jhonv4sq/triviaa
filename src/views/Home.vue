@@ -4,20 +4,19 @@
 
 <script>
 export default {
-  inject: ['secondaryBg', 'greenBg']
+  inject: ['secondaryBg']
 }
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo h-[230px] w-[230px]" src="../assets/logo.svg" width="125" height="125"/>
+    <img alt="Vue logo" class="logo h-[230px] w-[230px]" src="../assets/logo.svg" />
   </header>
   <main>
     <h1 class="font-hammer text-light text-xl">Test your brain with our quiz!</h1>
 
     <TailwindLink link="settings" :class="secondaryBg">Start Game</TailwindLink>
 
-    <!-- <tailwind-link href="/settings" :class="secondaryBg">Start Game</tailwind-link> -->
   </main>
 </template>
 

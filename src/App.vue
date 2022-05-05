@@ -35,7 +35,12 @@ export default {
     flex-direction: column;
     align-items: center;
   }
-
+  form{
+    width: 100%;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+  }
   header {
     line-height: 1.5;
     display: flex;
@@ -45,7 +50,7 @@ export default {
 
   .logo {
     display: block;
-    margin: 0 auto 2rem;
+    margin-bottom: 1rem;
   }
 
 </style>
