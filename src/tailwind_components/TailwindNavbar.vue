@@ -10,8 +10,6 @@ export default {
         link: String,
     },
     created() {
-        console.log(this.link); // Aqui es cuando se hace el componente en la app por primera vez, existe el mounted() y algunos más, te paso el link de información
-        // console.log(this.color);
     }
 }
 
