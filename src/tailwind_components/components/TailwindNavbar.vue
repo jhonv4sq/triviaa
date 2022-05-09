@@ -6,6 +6,7 @@
 
 <script>
 export default {
+    name: 'TailwindNavbar',
     props: {
         link: String,
     },

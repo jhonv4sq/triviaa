@@ -29,7 +29,6 @@ export default {
     padding: 2rem;
     position: relative;
     font-weight: normal;
-    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -52,6 +51,7 @@ export default {
     flex-direction: column;
     align-items: center;
   }
+
 
   .logo {
     display: block;
