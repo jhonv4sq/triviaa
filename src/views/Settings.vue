@@ -14,9 +14,9 @@
 </template>
 
 <script>
-    import TailwindTitle from '@/tailwind_components/components/TailwindTitle.vue';
+    import TailwindTitle from '@/tailwind_components/TailwindTitle.vue';
     import Logo from '@/components/Logo.vue';
-    import TailwindNavbar from '@/tailwind_components/components/TailwindNavbar.vue';
+    import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
     import TailwindForm from '@/tailwind_components/TailwindForm.vue';
 
     export default {

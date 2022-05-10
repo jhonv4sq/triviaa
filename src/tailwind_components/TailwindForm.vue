@@ -60,7 +60,7 @@
 
 <script>
 import axios from 'axios';
-import TailwindButton from '@/tailwind_components/components/TailwindButton.vue';
+import TailwindButton from '@/tailwind_components/TailwindButton.vue';
 
 export default {
   name: 'TailwindForm',
