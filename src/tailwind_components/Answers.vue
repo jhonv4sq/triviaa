@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center w-80 md:w-96 h-14 rounded-full uppercase font-bold ">
+  <button class="flex justify-center items-center w-screen md:w-96 h-14 rounded-full uppercase font-bold ">
       <slot/>
-  </div>
+  </button>
 </template>

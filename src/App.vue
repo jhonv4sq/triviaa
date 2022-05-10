@@ -24,18 +24,12 @@ export default {
   @import './assets/base.css';
 
   #app {
-    max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     position: relative;
     font-weight: normal;
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  main{
-    display: flex;  
     flex-direction: column;
     align-items: center;
   }

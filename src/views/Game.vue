@@ -1,19 +1,24 @@
 <script setup>
 import axios from 'axios';
-import ComponentGame from '@/tailwind_components/ComponentGame.vue';
 import Answers from '@/tailwind_components/Answers.vue'
-import Question from '../tailwind_components/Question.vue';
+import Question from '@/tailwind_components/Question.vue';
+import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
 </script>
 
 <template>
-  <!-- <ComponentGame :lists="allQuestions" /> -->
-  <div v-if="ready">
-    <Question>
+  <TailwindNavbar link="settings">
+    <p>Return</p>
+    <i></i>
+  </TailwindNavbar>
+  <div v-if="ready" class="flex flex-col gap-10">
+    <Question :question="this.question">
       {{ this.question }}
     </Question>
-    <Answers :class="answer.class" v-for="answer in this.answers">
-      {{ answer.answer }}
-    </Answers>
+    <div class="flex flex-col gap-6">
+      <Answers :class="answer.class" v-for="answer in this.answers">
+        {{ answer.answer }}
+      </Answers>
+    </div>
   </div>
 </template>
 
@@ -22,9 +27,6 @@ import Question from '../tailwind_components/Question.vue';
 export default {
   inject: ['pinkBg', 'purpleBg', 'blueBg', 'yellowBg'],
   name: 'Game',
-  components: {
-    ComponentGame
-  },
   
   props: {
     amount: {
@@ -65,7 +67,6 @@ export default {
       console.log(randomAnswers);
       return randomAnswers
     },
-
     startGame() {
 
       let unorderedAnswers = [];
@@ -79,7 +80,7 @@ export default {
         unorderedAnswers.push(
           {
             answer: questionObject.correct_answer,
-            isCorrect: true,
+            isCorrect: true
           }
         );
 
@@ -98,9 +99,6 @@ export default {
       } catch (error) {
         console.log(error)
       }
-
-      return
-      
     }
   },
 
