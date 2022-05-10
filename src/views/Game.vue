@@ -7,7 +7,7 @@ import Question from '../tailwind_components/Question.vue';
 
 <template>
   <div>
-    <Question>{{this.allQuestions[this.number].question}}</Question>
+    <Question :question="this.allQuestions[this.number].question"></Question>
   </div>
   <div class="flex flex-col gap-6 mt-20">
   <Answers :class="pinkBg" class="text-white">answer 1</Answers>
