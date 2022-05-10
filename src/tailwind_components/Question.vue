@@ -15,7 +15,7 @@ export default {
       default: () => ({}),
     },
   },
-  async data() {
+  data() {
     return {
       question: this.object.question,
     };

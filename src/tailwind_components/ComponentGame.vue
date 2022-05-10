@@ -12,7 +12,7 @@
 
 <script>
 import Question from './Question.vue';
-import TailwindButton from './components/TailwindButton.vue';
+import TailwindButton from './TailwindButton.vue';
 
 export default {
   components: { Question, TailwindButton },
