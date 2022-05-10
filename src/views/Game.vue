@@ -6,16 +6,28 @@ import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
 </script>
 
 <template>
-  <TailwindNavbar link="settings">
-    <p>Return</p>
-    <i></i>
-  </TailwindNavbar>
+  <div class="flex w-full lg:w-96 justify-between">
+    <TailwindNavbar class="text-center" link="settings">
+      <p>Return</p>
+      <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl"/>
+    </TailwindNavbar>
+    <TailwindNavbar class="text-center" link="results">
+      <p>End Game</p>
+      <font-awesome-icon icon="arrow-right-long" class="text-secondary text-3xl"/>
+    </TailwindNavbar>
+  </div>
   <div v-if="ready" class="flex flex-col gap-10">
     <Question :question="this.question">
       {{ this.question }}
     </Question>
-    <div class="flex flex-col gap-6">
-      <Answers :class="answer.class" v-for="answer in this.answers">
+    <div v-if="answered" class="flex flex-col gap-6">
+      <div v-for="answer in this.answers">
+      <Answers v-if="answer.isCorrect" :answer="answer.answer" class="bg-correct" />
+      <Answers v-else class="bg-wrong" :answer="answer.answer" />
+      </div>
+    </div>
+    <div v-else class="flex flex-col gap-6">
+      <Answers @click="handleClickAnswer" :answer="answer.answer" :class="answer.class" v-for="answer in this.answers">
         {{ answer.answer }}
       </Answers>
     </div>
@@ -68,6 +80,7 @@ export default {
       return randomAnswers
     },
     startGame() {
+      this.answered = false;
 
       let unorderedAnswers = [];
 
@@ -99,14 +112,19 @@ export default {
       } catch (error) {
         console.log(error)
       }
+    },
+    handleClickAnswer () {
+      this.answered = true;
     }
   },
 
   data() {
     return {
+      answered: false,
       ready: false,
       allQuestions: [],
       number: 0,
+      points: 0,
       question: '',
       answers: [],
       classes: [this.pinkBg, this.yellowBg, this.blueBg, this.purpleBg]
