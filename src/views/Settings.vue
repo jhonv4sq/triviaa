@@ -14,18 +14,18 @@
 </template>
 
 <script>
-    import TailwindTitle from '@/tailwind_components/TailwindTitle.vue';
-    import Logo from '@/components/Logo.vue';
-    import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
-    import TailwindForm from '@/tailwind_components/TailwindForm.vue';
+import TailwindTitle from '@/tailwind_components/TailwindTitle.vue';
+import Logo from '@/components/Logo.vue';
+import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
+import TailwindForm from '@/tailwind_components/TailwindForm.vue';
 
-    export default {
-    name: 'Settings',
-    components: {
-        TailwindTitle,
-        Logo,
-        TailwindNavbar,
-        TailwindForm,
-    },
-    };
+export default {
+  name: 'Settings',
+  components: {
+    TailwindTitle,
+    Logo,
+    TailwindNavbar,
+    TailwindForm,
+  },
+};
 </script>

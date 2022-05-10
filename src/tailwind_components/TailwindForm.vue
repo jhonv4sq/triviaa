@@ -1,6 +1,5 @@
 <template>
   <form action="" @submit.prevent="submit()" class="flex flex-col w-full mt-5">
-    
     <div class="flex flex-col mb-3">
       <label for="amount" class="text-white uppercase font-hammer mb-1"
         >Number of Question</label
@@ -91,7 +90,6 @@ export default {
       this.categories = result.data.trivia_categories;
     });
   },
-
   methods: {
     submit() {
       this.$router.push({
@@ -104,8 +102,7 @@ export default {
         },
       });
     },
-  }
-
+  },
 };
 </script>
 
