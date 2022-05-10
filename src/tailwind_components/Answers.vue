@@ -1,15 +1,5 @@
 <template>
-  
+  <div class="flex justify-center items-center w-80 md:w-96 h-14 rounded-full uppercase font-bold ">
+      <slot/>
+  </div>
 </template>
-
-<script>
-export default {
-    name: 'Answers',
-    inject: ['pinkBg', 'purpleBg', 'blueBg', 'yellowBg'],
-
-}
-</script>
-
-<style>
-
-</style>

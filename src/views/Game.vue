@@ -1,26 +1,27 @@
 <script setup>
-// import { createDOMCompilerError } from '@vue/compiler-dom';
+import axios from 'axios';
+import ComponentGame from '@/tailwind_components/ComponentGame.vue';
+import Answers from '@/tailwind_components/Answers.vue'
+import Question from '../tailwind_components/Question.vue';
 </script>
 
 <template>
   <!-- <ComponentGame :lists="allQuestions" /> -->
   <div v-if="ready">
-    <div>
+    <Question>
       {{ this.question }}
-    </div>
-    <div v-for="answer in this.answers">
+    </Question>
+    <Answers v-for="answer in this.answers">
       {{ answer }}
-    </div>
+    </Answers>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import ComponentGame from '@/tailwind_components/ComponentGame.vue';
 
 export default {
+  inject: ['pinkBg', 'purpleBg', 'blueBg', 'yellowBg'],
   name: 'Game',
-
   components: {
     ComponentGame
   },
@@ -51,37 +52,53 @@ export default {
       
       console.log(answers);
       let randomAnswers = [];
-
+      
       while(randomAnswers.length < 4) {
         let randomNumber = this.random(0, answers.length);
-        if (!randomAnswers.includes(answers[randomNumber])) {
-          randomAnswers.push(answers[randomNumber]);
+        if (!randomAnswers.includes(answers[randomNumber].answer) && !randomAnswers.includes(this.classes[randomNumber])) {
+          randomAnswers.push(
+            {
+              answer: answers[randomNumber].answer,
+              isCorrect: answers[randomNumber].isCorrect,
+              class: this.classes[randomNumber]
+            });
         }
-        console.log(randomAnswers);
       }
+
+
 
       return randomAnswers
       
     },
     startGame() {
+
       let unorderedAnswers = [];
 
       let questionObject = this.allQuestions[this.number];
-
-      console.log(questionObject);      
+    
       try {
+
         this.question = questionObject.question;
 
-        unorderedAnswers.push(questionObject.correct_answer);
+        unorderedAnswers.push(
+          {
+            answer: questionObject.correct_answer,
+            isCorrect: true,
+          }
+        );
 
         questionObject.incorrect_answers.forEach(answer => {
-          unorderedAnswers.push(answer);
+          unorderedAnswers.push(
+            {
+              answer: answer,
+              isCorrect: false
+            });
         })
-        console.log(unorderedAnswers);
 
         this.answers = this.unorderAnswers(unorderedAnswers);
 
         this.ready = true;
+
       } catch (error) {
         console.log(error)
       }
@@ -98,9 +115,11 @@ export default {
       number: 0,
       question: '',
       answers: [],
+      classes: [this.pinkBg, this.yellowBg, this.blueBg, this.purpleBg]
     };
   },
   async beforeCreate() {
+
     this.ready = false;
     const APIurl = `https://opentdb.com/api.php?amount=${this.amount}&difficulty=${this.difficulty}&category=${this.category}&type=${this.type}`;
 
@@ -109,9 +128,8 @@ export default {
       results.data.results.forEach(results => {
         this.allQuestions.push(results);
       })
-      console.log('in axios get');
+
     }).then(() => {
-      console.log('after axios get before startgame');
       this.startGame();
     }).catch(e => console.error(e));
   },
