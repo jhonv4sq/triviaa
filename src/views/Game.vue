@@ -3,15 +3,15 @@
     <Question :object="allQuestions[number]" />
   </header>
   <main>
-    <h1>{{ anwers }}</h1>
+    <p v-for="(anwer, index) in anwers" v-bind:key="index">{{ anwer }}</p>
   </main>
 </template>
 
 <script>
 import axios from 'axios';
 import Question from '@/tailwind_components/Question.vue';
-
 export default {
+  inject: ['pinkBg', 'purpleBg', 'blueBg', 'yellowBg'],
   name: 'Game',
 
   components: {
@@ -39,21 +39,28 @@ export default {
 
   data() {
     return {
+      color: ['pinkBg', 'purpleBg', 'blueBg', 'yellowBg'],
       allQuestions: [],
       quiestion: null,
-      anwers: null,
-      ramdonNumber:[],
+      anwers: [],
+      ramdonNumber: [],
       number: 0,
     };
   },
 
   methods: {
     addData(result) {
+      let index = 0;
       this.quiestion = result.question;
-      this.anwers = result.incorrect_answers;
-      this.anwers.push(result.correct_answer);
+      result.incorrect_answers.forEach((anwer) => {
+        this.anwers.push({ class: this.color[index], title: anwer });
+        index++;
+      });
+      this.anwers.push({
+        class: this.color[index],
+        title: result.correct_answer,
+      });
     },
-    
   },
 
   async created() {
