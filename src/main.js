@@ -5,6 +5,7 @@ import App from './App.vue'
 import Home from '@/views/Home.vue';
 import Settings from '@/views/Settings.vue';
 import Game from '@/views/Game.vue';
+import Results from '@/views/Results.vue';
 import './index.css'
 
 
@@ -26,6 +27,11 @@ const routes = [
     name: 'Game',
     component: Game,
     props: true
+  },
+  {
+    path: '/results',
+    name: 'Results',
+    component: Results
   }
 ];
 

@@ -91,7 +91,6 @@ export default {
       this.categories = result.data.trivia_categories;
     });
   },
-
   methods: {
     submit() {
       this.$router.push({
