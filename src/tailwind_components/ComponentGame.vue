@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Question from './Question.vue';
-import TailwindButton from './components/TailwindButton.vue';
+import Question from '@/tailwind_components/Question.vue';
+import TailwindButton from '@/tailwind_components/TailwindButton.vue';
 
 export default {
   components: { Question, TailwindButton },
