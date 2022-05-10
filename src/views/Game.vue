@@ -11,8 +11,8 @@ import Question from '../tailwind_components/Question.vue';
     <Question>
       {{ this.question }}
     </Question>
-    <Answers v-for="answer in this.answers">
-      {{ answer }}
+    <Answers :class="answer.class" v-for="answer in this.answers">
+      {{ answer.answer }}
     </Answers>
   </div>
 </template>
@@ -48,28 +48,24 @@ export default {
     random(min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
     },
+
     unorderAnswers(answers) {
       
-      console.log(answers);
       let randomAnswers = [];
-      
+
       while(randomAnswers.length < 4) {
         let randomNumber = this.random(0, answers.length);
-        if (!randomAnswers.includes(answers[randomNumber].answer) && !randomAnswers.includes(this.classes[randomNumber])) {
-          randomAnswers.push(
-            {
-              answer: answers[randomNumber].answer,
-              isCorrect: answers[randomNumber].isCorrect,
-              class: this.classes[randomNumber]
-            });
+        if (!randomAnswers.includes(answers[randomNumber])) {
+
+          answers[randomNumber].class = this.classes[randomNumber];
+          randomAnswers.push(answers[randomNumber]);
+
         }
       }
-
-
-
+      console.log(randomAnswers);
       return randomAnswers
-      
     },
+
     startGame() {
 
       let unorderedAnswers = [];
