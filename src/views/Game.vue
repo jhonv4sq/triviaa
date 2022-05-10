@@ -27,10 +27,14 @@ import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
       </div>
     </div>
     <div v-else class="flex flex-col gap-6">
-      <Answers @click="handleClickAnswer" :answer="answer.answer" :class="answer.class" v-for="answer in this.answers">
+      <Answers @click="(event) => handleClickAnswer(event)" :answer="answer.answer" :class="answer.class" v-for="answer in this.answers">
         {{ answer.answer }}
       </Answers>
     </div>
+    <button v-if="answered">
+      <p class="text-white text-xl font-bold">Siguiente pregunta</p>
+      <font-awesome-icon icon="arrow-right-long" class="text-secondary text-4xl" />
+    </button>
   </div>
 </template>
 
@@ -113,7 +117,8 @@ export default {
         console.log(error)
       }
     },
-    handleClickAnswer () {
+    handleClickAnswer (event) {
+      console.log(event);
       this.answered = true;
     }
   },
