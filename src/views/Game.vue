@@ -31,8 +31,12 @@ import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
         {{ answer.answer }}
       </Answers>
     </div>
-    <button v-if="answered">
+    <button @click="startGame" v-if="answered && !finished">
       <p class="text-white text-xl font-bold">Siguiente pregunta</p>
+      <font-awesome-icon icon="arrow-right-long" class="text-secondary text-4xl" />
+    </button>
+    <button v-if="answered && finished">
+      <p class="text-white text-xl font-bold">Finalizar juego</p>
       <font-awesome-icon icon="arrow-right-long" class="text-secondary text-4xl" />
     </button>
   </div>
@@ -86,6 +90,9 @@ export default {
     startGame() {
       this.answered = false;
 
+      console.log('Numero de pregunta ' + this.number);
+      console.log('Puntos totales ' + this.points);
+
       let unorderedAnswers = [];
 
       let questionObject = this.allQuestions[this.number];
@@ -118,8 +125,27 @@ export default {
       }
     },
     handleClickAnswer (event) {
-      console.log(event);
+
       this.answered = true;
+
+      if (this.number == (this.allQuestions.length - 1)) {
+        this.finished = true;
+        return
+      }
+
+      const userAnswer = event.target.innerText;
+      let answerObject = {};
+
+      for (let index = 0; index < this.answers.length; index++) {
+        if (this.answers[index].answer.toLowerCase() == userAnswer.toLowerCase()) {
+          answerObject = this.answers[index];
+        }
+      }
+
+      if (answerObject.isCorrect) {
+        this.points++;
+      }
+      this.number++;
     }
   },
 
@@ -127,6 +153,7 @@ export default {
     return {
       answered: false,
       ready: false,
+      finished: false,
       allQuestions: [],
       number: 0,
       points: 0,
@@ -148,7 +175,7 @@ export default {
 
     }).then(() => {
       this.startGame();
-    }).catch(e => console.error(e));
+    })
   },
 
 };
