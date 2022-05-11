@@ -35,7 +35,7 @@ import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
       <p class="text-white text-xl font-bold">Siguiente pregunta</p>
       <font-awesome-icon icon="arrow-right-long" class="text-secondary text-4xl" />
     </button>
-    <button v-if="answered && finished">
+    <button @click="results" v-if="answered && finished">
       <p class="text-white text-xl font-bold">Finalizar juego</p>
       <font-awesome-icon icon="arrow-right-long" class="text-secondary text-4xl" />
     </button>
@@ -67,6 +67,14 @@ export default {
     },
   },
   methods: {
+    results() {
+      this.$router.push({
+        name: 'Results',
+        params: {
+          points: this.points,
+          questions: this.amount,
+        },})
+    },
     random(min, max) {
       return Math.floor(Math.random() * (max - min)) + min;
     },
