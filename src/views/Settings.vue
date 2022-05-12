@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex top-2 w-full">
+  <nav class="flex w-full">
     <div class="flex flex-row w-80 justify-between">
       <TailwindNavbar class="text-center" link="/">
         <div>
