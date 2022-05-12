@@ -7,17 +7,9 @@
         class="text-secondary text-3xl"
       />
     </TailwindNavbar>
-
-    <TailwindNavbar class="text-center" link="results">
-      <p>End Game</p>
-      <font-awesome-icon
-        icon="arrow-right-long"
-        class="text-secondary text-3xl"
-      />
-    </TailwindNavbar>
   </div>
 
-  <div v-if="ready" class="flex flex-col gap-10">
+  <div v-if="ready" class="flex flex-col gap-4">
 
     <!-- componente de la barra de progreso  -->
     <TailwindProgress :progress="this.number * 100 / this.allQuestions.length" />
@@ -46,14 +38,14 @@
     </div>
 
     <button @click="startGame" v-if="answered && !finished">
-      <p class="text-white text-xl font-bold">Siguiente pregunta</p>
+      <p class="text-white text-xl font-bold">Next Question</p>
       <font-awesome-icon
         icon="arrow-right-long"
         class="text-secondary text-4xl"
       />
     </button>
     <button @click="results" v-if="answered && finished">
-      <p class="text-white text-xl font-bold">Finalizar juego</p>
+      <p class="text-white text-xl font-bold">Finish Game</p>
       <font-awesome-icon
         icon="arrow-right-long"
         class="text-secondary text-4xl"

@@ -6,7 +6,7 @@
       >
       <input
         type="number"
-        min="10"
+        min="1"
         max="50"
         v-model="formData.amount"
         class="uppercase text-center w-80 md:w-96 block px-3 py-1.5 text-base font-hammer text-dark bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded m-0 focus:outline-none"

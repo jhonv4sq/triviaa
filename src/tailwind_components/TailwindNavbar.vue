@@ -10,8 +10,6 @@ export default {
     props: {
         link: String,
     },
-    created() {
-    }
 }
 
 </script>

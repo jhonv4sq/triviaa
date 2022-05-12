@@ -34,7 +34,8 @@ const routes = [
   {
     path: '/results',
     name: 'Results',
-    component: Results
+    component: Results,
+    props: true
   }
 ];
 
