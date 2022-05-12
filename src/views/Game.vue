@@ -1,11 +1,10 @@
 <template>
-  <div class="flex w-full lg:w-96 justify-between">
+  <div class="flex w-full justify-between">
     <TailwindNavbar class="text-center" link="settings">
-      <p>Return</p>
-      <font-awesome-icon
-        icon="arrow-left-long"
-        class="text-secondary text-3xl"
-      />
+      <div>
+        <p>Return</p>
+        <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl" />
+      </div>
     </TailwindNavbar>
   </div>
 

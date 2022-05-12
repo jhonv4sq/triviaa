@@ -25,7 +25,7 @@ export default {
 
   #app {
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     font-weight: normal;
 

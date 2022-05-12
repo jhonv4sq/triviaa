@@ -12,7 +12,7 @@ import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
     <p class="text-primary font-bold text-4xl">{{this.points}}</p>
     <p class="text-white uppercase font-bold text-lg">out of {{this.questions}} questions</p>
 </div>
-<p class="text-secondary text-lg font-bold mt-10 uppercase font-hammer">what to do now?</p>
+<p class="text-primary text-lg font-bold mt-10 uppercase font-hammer">what to do now?</p>
 <div class="flex w-full lg:w-96 justify-between mt-10">
     <TailwindNavbar class="text-center" link="/">
       <div>

@@ -9,13 +9,15 @@
       </TailwindNavbar>
     </div>
   </nav>
-  <header>
-    <Logo class="h-[170px] w-[170px]" />
-    <TailwindTitle>trivia settings</TailwindTitle>
-  </header>
-  <main>
-    <TailwindForm />
-  </main>
+  <div class="h-screen flex flex-col justify-center">
+    <header>
+      <Logo class="h-[170px] w-[170px]" />
+      <TailwindTitle>trivia settings</TailwindTitle>
+    </header>
+    <main>
+      <TailwindForm />
+    </main>
+  </div>
 </template>
 
 <script>
