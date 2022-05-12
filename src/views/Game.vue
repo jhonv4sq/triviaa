@@ -1,18 +1,21 @@
 <template>
-  <div class="flex w-full justify-between">
+  <div class="px-1 flex w-screen">
     <TailwindNavbar class="text-center" link="settings">
       <div>
         <p>Return</p>
         <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl" />
       </div>
     </TailwindNavbar>
+
+    <p class="self-center uppercase text-center text-primary py-1 font-bold w-full mr-[52px]">{{this.questionCategory}}</p>
   </div>
 
   <div v-if="ready" class="flex flex-col gap-4">
 
+    
     <!-- componente de la barra de progreso  -->
     <TailwindProgress :progress="this.number * 100 / this.allQuestions.length" />
-    
+
     <Question :question="this.question" />
 
     <div v-if="answered" class="flex flex-col gap-6">
@@ -95,6 +98,7 @@ export default {
       finished: false,
       allQuestions: [],
       number: 0,
+      questionCategory: '',
       points: 0,
       question: '',
       answers: null,
@@ -138,6 +142,7 @@ export default {
 
       try {
         this.question = questionObject.question;
+        this.questionCategory = questionObject.category;
 
         for (let answer of questionObject.incorrect_answers) {
           questionsList.push({
@@ -175,6 +180,7 @@ export default {
 
       this.answers = this.unorderAnswers();
 
+            console.log(this.questionCategory);
       this.ready = true;
     },
 
