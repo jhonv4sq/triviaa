@@ -46,10 +46,6 @@ export default {
             type: Number,
             default: 10,
         },
-    },
-    created(){
-        console.log(this.points)
-        console.log(this.questions)
     }
 }
 </script>
