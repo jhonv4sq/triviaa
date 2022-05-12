@@ -1,5 +1,6 @@
 <script setup>
 import Logo from '@/components/Logo.vue';
+import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
 </script>
 
 <template>
@@ -8,8 +9,8 @@ import Logo from '@/components/Logo.vue';
 <div class="text-secondary uppercase font-bold text-6xl">results</div>
 <div class="flex flex-col text-center gap-2 mt-8">
     <p class="text-white uppercase text-lg">You aswered correctly</p>
-    <p class="text-primary font-bold text-4xl">{{this.points}}</p>
-    <p class="text-white uppercase font-bold text-lg">out of {{this.questions}} questions</p>
+    <p class="text-primary font-bold text-4xl">{{points}}</p>
+    <p class="text-white uppercase font-bold text-lg">out of {{questions}} questions</p>
 </div>
 <p class="text-primary text-lg font-bold mt-10 uppercase font-hammer">what to do now?</p>
 <div class="flex w-full lg:w-96 justify-between mt-10">
@@ -45,16 +46,6 @@ export default {
             type: Number,
             default: 10,
         },
-    },
-    data() {
-      return {
-        points: 0,
-        questions: 10
-      }
-    },
-    beforeCreate() {
-      this.points = this.$props.points;
-      this.questions = this.$props.questions;
     }
 }
 </script>
