@@ -1,6 +1,5 @@
 <script setup>
 import Logo from '@/components/Logo.vue';
-import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
 </script>
 
 <template>
@@ -46,6 +45,16 @@ export default {
             type: Number,
             default: 10,
         },
+    },
+    data() {
+      return {
+        points: 0,
+        questions: 10
+      }
+    },
+    beforeCreate() {
+      this.points = this.$props.points;
+      this.questions = this.$props.questions;
     }
 }
 </script>
