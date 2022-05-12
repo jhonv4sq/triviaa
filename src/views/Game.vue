@@ -1,5 +1,6 @@
 <template>
-  <div class="px-1 flex w-screen">
+  <div class="flex flex-col items-center justify-center" v-if="!error">
+  <div class="px-1 flex w-screen" v-if="ready">
     <TailwindNavbar class="text-center" link="settings">
       <div>
         <p>Return</p>
@@ -10,7 +11,7 @@
     <p class="self-center uppercase text-center text-primary py-1 font-bold w-full mr-[52px]">{{this.questionCategory}}</p>
   </div>
 
-  <div v-if="ready" class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4" v-if="ready">
 
     
     <!-- componente de la barra de progreso  -->
@@ -54,6 +55,16 @@
       />
     </button>
   </div>
+  </div>
+  <div v-else class="h-screen w-screen flex flex-col gap-10 items-center justify-center">
+    <h1 class="font-bold text-white">There was an error with the API</h1>
+    <TailwindNavbar class="text-center" link="settings">
+      <div>
+        <p>Return</p>
+        <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl" />
+      </div>
+    </TailwindNavbar>
+  </div>
 </template>
 
 <script>
@@ -94,6 +105,7 @@ export default {
   data() {
     return {
       answered: false,
+      error: false,
       ready: false,
       finished: false,
       allQuestions: [],
@@ -180,7 +192,7 @@ export default {
 
       this.answers = this.unorderAnswers();
 
-            console.log(this.questionCategory);
+      console.log(this.questionCategory);
       this.ready = true;
     },
 
@@ -224,6 +236,8 @@ export default {
       })
       .then(() => {
         this.startGame();
+      }).catch(() => {
+        this.error = true;
       });
   },
 };
