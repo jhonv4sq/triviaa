@@ -1,7 +1,10 @@
 <template>
   <nav class="container flex justify-center absolute top-2 w-full">
     <div class="flex flex-row w-80 justify-between">
-      <TailwindNavbar link="/">return</TailwindNavbar>
+      <TailwindNavbar class="text-center" link="/">
+        <p>Return</p>
+        <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl"/>
+      </TailwindNavbar>
     </div>
   </nav>
   <header>

@@ -1,6 +1,9 @@
 import { data } from 'autoprefixer';
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router';
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faLongArrowLeft, faLongArrowRight } from '@fortawesome/free-solid-svg-icons';
 import App from './App.vue'
 import Home from '@/views/Home.vue';
 import Settings from '@/views/Settings.vue';
@@ -40,8 +43,11 @@ const router = createRouter({
   routes
 })
 
+library.add([faLongArrowLeft, faLongArrowRight]);
+
 const app = createApp(App);
 app.use(router);
+app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount('#app');
 
 export default {

@@ -1,14 +1,15 @@
 <template>
   <div
-    class="flex items-center justify-center text-center px-2 font-hammer h-32 bg-primary w-80 md:w-96 rounded"
-  >
-    <label for="Question"><slot/></label>
+    class="flex items-center justify-center text-center px-2 font-hammer h-48 bg-primary w-screen md:w-96 rounded-lg  ">
+    <label for="Question" v-html="question"></label>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Question'
+  name: 'Question',
+  props:{
+    question:'',
+  }
 }
 </script>
-
