@@ -1,19 +1,23 @@
 <template>
-  <nav class="container flex justify-center absolute top-2 w-full">
-    <div class="flex flex-row w-80 justify-between">
+  <nav class="container flex justify-center absolute top-2 w-full z-50">
+    <div class="flex flex-row w-80 md:w-96 justify-between">
       <TailwindNavbar class="text-center" link="/">
-        <p>Return</p>
-        <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl"/>
+        <div>
+          <p>Return</p>
+          <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl"/>
+        </div>
       </TailwindNavbar>
     </div>
   </nav>
-  <header>
-    <Logo class="h-[170px] w-[170px]" />
-    <TailwindTitle>trivia settings</TailwindTitle>
-  </header>
-  <main>
-    <TailwindForm />
-  </main>
+  <div class="h-screen flex flex-col justify-center">
+    <header>
+      <Logo class="h-[170px] w-[170px]" />
+      <TailwindTitle>trivia settings</TailwindTitle>
+    </header>
+    <main>
+      <TailwindForm />
+    </main>
+  </div>
 </template>
 
 <script>

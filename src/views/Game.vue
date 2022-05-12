@@ -1,23 +1,15 @@
 <template>
   <div class="flex w-full lg:w-96 justify-between">
     <TailwindNavbar class="text-center" link="settings">
-      <p>Return</p>
-      <font-awesome-icon
-        icon="arrow-left-long"
-        class="text-secondary text-3xl"
-      />
+      <div>
+        <p>Return</p>
+        <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl" />
+      </div>
     </TailwindNavbar>
 
-    <TailwindNavbar class="text-center" link="results">
-      <p>End Game</p>
-      <font-awesome-icon
-        icon="arrow-right-long"
-        class="text-secondary text-3xl"
-      />
-    </TailwindNavbar>
   </div>
 
-  <div v-if="ready" class="flex flex-col gap-10">
+  <div v-if="ready" class="flex flex-col gap-4">
 
     <!-- componente de la barra de progreso  -->
     <TailwindProgress :progress="this.number * 100 / this.allQuestions.length" />
