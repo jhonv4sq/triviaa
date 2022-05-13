@@ -11,15 +11,15 @@
 </template>
 
 <script>
-  import Logo from '@/components/Logo.vue';
-  import TailwindLink from '@/tailwind_components/TailwindLink.vue';
+import Logo from '@/components/Logo.vue';
+import TailwindLink from '@/tailwind_components/TailwindLink.vue';
 
-  export default {
-    name: 'Home',
-    components: {
-      Logo,
-      TailwindLink,
-    },
-    inject: ['secondaryBg'],
-  };
+export default {
+  name: 'Home',
+  components: {
+    Logo,
+    TailwindLink,
+  },
+  inject: ['secondaryBg'],
+};
 </script>

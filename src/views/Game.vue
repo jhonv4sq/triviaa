@@ -1,67 +1,81 @@
 <template>
   <div class="flex flex-col items-center justify-center" v-if="!error">
-  <div class="px-1 flex w-screen" v-if="ready">
-    <TailwindNavbar class="text-center pl-3" link="settings">
-      <div>
-        <p>Return</p>
-        <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl" />
-      </div>
-    </TailwindNavbar>
+    <div class="px-1 flex w-screen" v-if="ready">
+      <TailwindNavbar class="text-center pl-3" link="settings">
+        <div>
+          <p>Return</p>
+          <font-awesome-icon
+            icon="arrow-left-long"
+            class="text-secondary text-3xl"
+          />
+        </div>
+      </TailwindNavbar>
 
-    <p class="self-center uppercase text-center text-primary py-1 font-bold w-full mr-[52px]">{{this.questionCategory}}</p>
-  </div>
-
-  <div class="flex flex-col gap-4" v-if="ready">
-
-    
-    <!-- componente de la barra de progreso  -->
-    <TailwindProgress :progress="this.number * 100 / this.allQuestions.length" />
-
-    <Question :question="this.question" />
-
-    <div v-if="answered" class="flex flex-col gap-6">
-      <div v-for="answer in this.answers">
-        <Answers
-          v-if="answer.isCorrect"
-          :answer="answer.answer"
-          class="bg-correct"
-        />
-        <Answers v-else class="bg-wrong" :answer="answer.answer" />
-      </div>
-    </div>
-
-    <div v-else class="flex flex-col gap-6">
-      <Answers @click="(event) => handleClickAnswer(event)"
-        :answer="answer.answer"
-        :class="answer.class"
-        v-for="answer in this.answers"
+      <p
+        class="self-center uppercase text-center text-primary py-1 font-bold w-full mr-[52px]"
       >
-        {{ answer.answer }}
-      </Answers>
+        {{ this.questionCategory }}
+      </p>
     </div>
 
-    <button @click="startGame" v-if="answered && !finished">
-      <p class="text-white text-xl font-bold">Next Question</p>
-      <font-awesome-icon
-        icon="arrow-right-long"
-        class="text-secondary text-4xl"
+    <div class="flex flex-col gap-4" v-if="ready">
+      <!-- componente de la barra de progreso  -->
+      <TailwindProgress
+        :progress="(this.number * 100) / this.allQuestions.length"
       />
-    </button>
-    <button @click="results" v-if="answered && finished">
-      <p class="text-white text-xl font-bold">Finish Game</p>
-      <font-awesome-icon
-        icon="arrow-right-long"
-        class="text-secondary text-4xl"
-      />
-    </button>
+
+      <Question :question="this.question" />
+
+      <div v-if="answered" class="flex flex-col gap-6">
+        <div v-for="answer in this.answers">
+          <Answers
+            v-if="answer.isCorrect"
+            :answer="answer.answer"
+            class="bg-correct"
+          />
+          <Answers v-else class="bg-wrong" :answer="answer.answer" />
+        </div>
+      </div>
+
+      <div v-else class="flex flex-col gap-6">
+        <Answers
+          @click="(event) => handleClickAnswer(event)"
+          :answer="answer.answer"
+          :class="answer.class"
+          v-for="answer in this.answers"
+        >
+          {{ answer.answer }}
+        </Answers>
+      </div>
+
+      <button @click="startGame" v-if="answered && !finished">
+        <p class="text-white text-xl font-bold">Next Question</p>
+        <font-awesome-icon
+          icon="arrow-right-long"
+          class="text-secondary text-4xl"
+        />
+      </button>
+      <button @click="results" v-if="answered && finished">
+        <p class="text-white text-xl font-bold">Finish Game</p>
+        <font-awesome-icon
+          icon="arrow-right-long"
+          class="text-secondary text-4xl"
+        />
+      </button>
+    </div>
   </div>
-  </div>
-  <div v-else class="h-screen w-screen flex flex-col gap-10 items-center justify-center">
+  <div
+    v-else
+    class="h-screen w-screen flex flex-col gap-10 items-center justify-center"
+  >
     <h1 class="font-bold text-white">There was an error with the API</h1>
     <TailwindNavbar class="text-center" link="settings">
       <div>
         <p>Return</p>
-        <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl" />
+        <font-awesome-icon
+          icon="arrow-left-long"
+          class="text-secondary text-3xl"
+        />
       </div>
     </TailwindNavbar>
   </div>
@@ -196,7 +210,7 @@ export default {
       this.ready = true;
     },
 
-    // Este método no lo toque por que no lo entendía bien xD lo deje como estaba 
+    // Este método no lo toque por que no lo entendía bien xD lo deje como estaba
     handleClickAnswer(event) {
       this.answered = true;
 
@@ -220,7 +234,6 @@ export default {
       }
       this.number++;
     },
-
   },
 
   async created() {
@@ -236,7 +249,8 @@ export default {
       })
       .then(() => {
         this.startGame();
-      }).catch(() => {
+      })
+      .catch(() => {
         this.error = true;
       });
   },

@@ -24,11 +24,10 @@
       >
         <option value="">any</option>
         <option
-          v-for="(list, index) in categories"
-          v-bind:key="index"
-          :value="list.id"
+          v-for="category in categories"
+          :value="category.id"
         >
-          {{ list.name }}
+          {{ category.name }}
         </option>
       </select>
     </div>
@@ -44,11 +43,9 @@
       >
         <option value="">any</option>
         <option
-          v-for="(list, index) in difficulties"
-          v-bind:key="index"
-          :value="list.id"
+          v-for="difficulty in difficulties"
         >
-          {{ list.name }}
+          {{ difficulty.name }}
         </option>
       </select>
     </div>
