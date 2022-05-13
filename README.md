@@ -49,4 +49,4 @@ npm run dev
 You can now access the server at http://localhost:3000
 
 ## You can test our app at
-factotrivia.herokuapp.com/
+http://factotrivia.herokuapp.com/
