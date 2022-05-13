@@ -39,7 +39,7 @@ Switch to the repo folder
 ```bash
 cd triviaa
 ```
-Install all the dependencies using composer
+Install all the dependencies using npm
 ```bash
 npm install
 ```
