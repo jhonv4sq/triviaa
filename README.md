@@ -1,29 +1,52 @@
-# triviaa
+# The project
 
-This template should help get you started developing with Vue 3 in Vite.
+The project is part of a formation course by FactoriaF5 where the main goal is to adquire the knowledge and experience to Vue.js framework developing a tirvia game app using a Json api to get the questions followed by the answers which will be displayed on the player screen before starting the game.
 
-## Recommended IDE Setup
+# FactoTrivia
+It is a game about questions where the player's knowledge will be put to the test in different topics such as (ENTERTAINMENT, SCIENCE AND NATURE, SPORTS, GEOGRAPHY, HISTORY .etc), the player will see multiple choice questions and will have to select the correct answer in order to accumulate points and measure against their friends making the winner the one with the most points at the end of the round.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+------------
 
-## Customize configuration
+<div align="center"><img src="https://i.postimg.cc/CdTfM7sQ/Logo-1.png"></div>
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+------------
 
-## Project Setup
 
-```sh
+## Used Api
+```bash
+https://opentdb.com/api_config.php
+```
+
+## Game screen
+
+<div style="display:flex; flex-wrap:wrap; justify-content:space-between;">
+<img style="width:300px" src="https://i.postimg.cc/c6qCQc6G/Screenshot-20220512-220813-Chrome.jpg">
+<img style="width:300px" src="https://i.postimg.cc/ZK3FX783/Screenshot-20220512-220827-Chrome.jpg">
+<img style="width:300px" src="https://i.postimg.cc/bJWkBkd3/Screenshot-20220512-220840-Chrome.jpg">
+<img style="width:300px" src="https://i.postimg.cc/hPFV8LkG/Screenshot-20220512-220956-Chrome.jpg">
+</div>
+
+
+# Getting started
+## Installation
+
+Please check the official vue.js installation guide for server requirements before you start. [Official Documentation](https://vuejs.org/guide/quick-start.htmlº111)
+Clone the repository
+```bash
+git clone https://github.com/jhonv4sq/triviaa.git
+```
+Switch to the repo folder
+```bash
+cd triviaa
+```
+Install all the dependencies using composer
+```bash
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
+```bash
 npm run dev
 ```
+You can now access the server at http://localhost:3000
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## You can test our app at
+factotrivia.herokuapp.com/
