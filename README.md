@@ -48,5 +48,10 @@ npm run dev
 ```
 You can now access the server at http://localhost:3000
 
+## Team
+- [Adrián Pelayo](https://github.com/bigbae18)
+- [Jhon Vásquez](https://github.com/jhonv4sq)
+- [Sergi Aparicio](https://github.com/Sergiaparicio)
+
 ## You can test our app at
 http://factotrivia.herokuapp.com/
