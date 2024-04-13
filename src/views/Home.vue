@@ -6,7 +6,7 @@
       Test your brain with our quiz!
     </h1>
 
-    <TailwindLink link="settings" :class="secondaryBg">Start Game</TailwindLink>
+    <TailwindLink link="/triviaa/settings" :class="secondaryBg">Start Game</TailwindLink>
   </div>
 </template>
 

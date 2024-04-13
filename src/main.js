@@ -14,25 +14,25 @@ import './index.css'
 
 const routes = [
   { 
-    path: '/',
+    path: '/triviaa/',
     name: 'Home',
     component: Home,
     props: true
   },
   {
-    path: '/settings',
+    path: '/triviaa/settings',
     name: 'Settings',
     component: Settings,
     props: true
   },
   {
-    path: '/game',
+    path: '/triviaa/game',
     name: 'Game',
     component: Game,
     props: true
   },
   {
-    path: '/results',
+    path: '/triviaa/results',
     name: 'Results',
     component: Results,
     props: true

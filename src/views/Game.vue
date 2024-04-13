@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center justify-center" v-if="!error">
     <div class="px-1 flex w-screen" v-if="ready">
-      <TailwindNavbar class="text-center pl-3" link="settings">
+      <TailwindNavbar class="text-center pl-3" link="/triviaa/settings">
         <div>
           <p>Return</p>
           <font-awesome-icon

@@ -14,14 +14,14 @@ import TailwindNavbar from '@/tailwind_components/TailwindNavbar.vue';
 </div>
 <p class="text-primary text-lg font-bold mt-10 uppercase font-hammer">what to do now?</p>
 <div class="flex w-full lg:w-96 justify-between mt-10">
-    <TailwindNavbar class="text-center" link="/">
+    <TailwindNavbar class="text-center" link="/triviaa/">
       <div>
         <p>Home</p>
         <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl"/>
     </div>
     </TailwindNavbar>
 
-    <TailwindNavbar class="text-center" link="settings">
+    <TailwindNavbar class="text-center" link="/triviaa/settings">
       <div>
       <p>Play again</p>
       <font-awesome-icon icon="arrow-right-long" class="text-secondary text-3xl"/>

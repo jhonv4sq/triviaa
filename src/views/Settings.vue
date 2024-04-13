@@ -1,7 +1,7 @@
 <template>
   <nav class="flex w-full">
     <div class="flex flex-row w-80 justify-between">
-      <TailwindNavbar class="text-center" link="/">
+      <TailwindNavbar class="text-center" link="/triviaa/">
         <div>
         <p>Return</p>
         <font-awesome-icon icon="arrow-left-long" class="text-secondary text-3xl"/>
