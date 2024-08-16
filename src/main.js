@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 import { createWebHistory, createRouter } from 'vue-router'
+
+import './scss/styles.scss'
+import * as bootstrap from 'bootstrap'
 
 const routes = [
   { 
